@@ -1,0 +1,64 @@
+server:
+  servlet:
+    # UTF-8
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            # 允许跨域的源(网站域名/ip)，设置*为全部
+            allowedOrigins: "*"
+            # 允许跨域的method， 默认为GET和OPTIONS，设置*为全部
+            allowedMethods: "*"
+            # 允许跨域请求里的head字段，设置*为全部
+            allowedHeaders: "*"
+      default-filters:
+        - name: Fallback
+        - name: RequestRateLimiter
+          args:
+            key-resolver: "#{@ipKeyResolver}"
+            # 如果返回的key是空的话，则不进行限流
+            deny-empty-key: true
+            # 每秒产生多少个令牌
+            redis-rate-limiter.replenishRate: 10000
+            # 1秒内最大的令牌，即在1s内可以允许的突发流程，设置为0，表示阻止所有的请求
+            redis-rate-limiter.burstCapacity: 10000
+            # 每次请求申请几个令牌
+            redis-rate-limiter.requestedTokens: 1
+        - name: CircuitBreaker
+          args:
+            fallbackUri: forward:/api/v1/gateway/fallback
+            status: 500
+      routes:
+        - id: tik-user
+          uri: lb://tik-user
+          predicates:
+            - Path=/api/v1/user/**
+        - id: tik-hot
+          uri: lb://tik-hot
+          predicates:
+            - Path=/api/v1/hot/**
+        - id: tik-comment
+          uri: lb://tik-comment
+          predicates:
+            - Path=/api/v1/comment/**
+        - id: tik-video
+          uri: lb://tik-video
+          predicates:
+            - Path=/api/v1/video/**
+        - id: tik-picture
+          uri: lb://tik-picture
+          predicates:
+            - Path=/api/v1/picture/**
+  data:
+    redis:
+      port: 6379
+      host: 127.0.0.1
+      database: 1
+      password: 123456

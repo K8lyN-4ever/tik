@@ -1,0 +1,38 @@
+video:
+  path: H:\Project\JavaProject\tik\video\
+  format: .mp4
+
+ali:
+  oss:
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    roleArn: 
+    accessKeyId: 
+    accessKeySecret: 
+    bucketName: 
+    roleSessionName: SessionTest
+    durationSeconds: 3600
+
+server:
+  servlet:
+    # UTF-8
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  # datasource
+  datasource:
+    username: root
+    password: 
+    url: jdbc:mysql://localhost:3306/videos?allowPublicKeyRetrieval=true&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+        max-file-size: 1024MB
+        max-request-size: 1030MB
+
+# mybatis-plus log
+logging:
+  level:
+    edu.td.zy.tik_video.mapper: INFO

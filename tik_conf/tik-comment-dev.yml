@@ -1,0 +1,20 @@
+server:
+  servlet:
+    # UTF-8
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  # datasource
+  datasource:
+    username: root
+    password: 
+    url: jdbc:mysql://localhost:3306/comments?allowPublicKeyRetrieval=true&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# mybatis-plus log
+logging:
+  level:
+    edu.td.zy.tik_comment.mapper: INFO

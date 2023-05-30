@@ -1,0 +1,26 @@
+# avatar
+avatar:
+  path: H:\Project\JavaProject\tik\avatar\
+  default: default
+  format: .png
+
+server:
+  servlet:
+    # UTF-8
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  # datasource
+  datasource:
+    username: root
+    password: 
+    url: jdbc:mysql://localhost:3306/users?allowPublicKeyRetrieval=true&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# mybatis-plus log
+logging:
+  level:
+    edu.td.zy.tik_user.mapper: INFO

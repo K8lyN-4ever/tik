@@ -1,0 +1,23 @@
+hot:
+  size: 100
+  dates:
+    - "2304"
+
+server:
+  servlet:
+    # UTF-8
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    max-total: 10
+    max-idle: 5
+    min-idle: 1
+    password: 123456
+
+
