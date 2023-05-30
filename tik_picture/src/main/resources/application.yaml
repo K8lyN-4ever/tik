@@ -1,0 +1,16 @@
+server:
+  port: 8005
+
+spring:
+  application:
+    name: tik-picture
+  config:
+    import:
+      - optional:configserver:${CONFIGSERVER_URL:http://localhost:8888}
+  cloud:
+    config:
+      uri: localhost:8888
+      name: tik-picture
+      profile: dev
+    zookeeper:
+      connect-string: localhost:2181

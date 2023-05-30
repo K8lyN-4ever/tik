@@ -1,0 +1,18 @@
+server:
+  port: 8007
+
+spring:
+  application:
+    name: tik-video
+  config:
+    import:
+      - optional:configserver:${CONFIGSERVER_URL:http://localhost:8888}
+  cloud:
+    config:
+      uri: localhost:8888
+      name: tik-video
+      profile: dev
+    zookeeper:
+      connect-string: localhost:2181
+
+

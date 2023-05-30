@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/public/jquery-3.6.4.min.js"></script>
+    <script src="js/public/jquery-cookie-1.4.1.min.js"></script>
+    <script src="js/public/dropzone-5.9.3.min.js"></script>
+    <link rel="stylesheet" href="css/public/basic.css" />
+    <link rel="stylesheet" href="css/public/dropzone.min.css"/>
+    <link rel="stylesheet" href="css/upload.css" />
+    <link rel="stylesheet" href="css/public/googleapis.css" />
+    <link rel='stylesheet' href="css/public/boxicons.min.css" />
+    <script src="js/public/fontawesome.min.js" crossorigin="anonymous"></script>
+    <script src="js/public/aliyun-oss-sdk-6.17.0.min.js"></script>
+    <script type="module" src="js/upload.js"></script>
+</head>
+<body>
+
+<button id="jump" href="index.html" style="display: none"></button>
+
+<header>
+    <nav class="navbar">
+        <img class="logo" href="login.html" src="asset/tiktok.png" alt="Tiktok" />
+        <div class="search-bar">
+            <input
+                    type="text"
+                    class="search-input"
+                    placeholder="查找用户和视频"
+            />
+            <button class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div class="nav-right">
+            <button class="upload-btn">投稿</button>
+            <button class="login-btn">登录</button>
+            <div class="drop-down">
+                <i class="fas fa-ellipsis-v fa-lg"></i>
+                <div class="menu hidden">
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fas fa-font fa-lg"></i>中文</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="far fa-question-circle fa-lg"></i>反馈和帮助
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                            ><i class="far fa-keyboard fa-lg"></i>键盘快捷键</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<input id="upload-input" type="file" value="file" accept="video/mp4" style="display: none">
+
+<div class="container">
+    <div id="file-dropzone" class="inner-element">
+        <div class="upload-tip">
+            <p class="ignore" style="font-size:20px; font-weight: bold">选择要上传的视频</p>
+            <p class="ignore" style="color: rgba(22, 24, 35, 0.75)">或拖放文件</p>
+            <br/>
+            <p class="ignore" style="color: rgba(22, 24, 35, 0.5)">MP4</p>
+            <p class="ignore" style="color: rgba(22, 24, 35, 0.5)">最长30分钟</p>
+            <p class="ignore" style="color: rgba(22, 24, 35, 0.5)">小于2GB</p>
+            <progress id="progress-bar" value="0" max="100"></progress>
+        </div>
+
+    </div>
+
+    <div class="inputs">
+        <label>
+            <input id="path-input" type="text" name="path" value="" style="display: none">
+        </label>
+        <label>
+            标题:
+            <input id="title-input" type="text" name="title">
+        </label><br><br><br><br>
+        <label>
+            描述:
+            <input id="desc-input" type="text" name="desc">
+        </label><br><br><br>
+        <button id="post-btn" class="login-btn" type="button">发布</button>
+        <button class="forget-btn" type="button">放弃</button>
+    </div>
+
+</div>
+
+</body>
+</html>

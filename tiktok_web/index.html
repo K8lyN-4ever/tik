@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="css/public/googleapis.css" rel="stylesheet"/>
+    <link href="css/public/boxicons.min.css" rel='stylesheet'>
+    <title>TikTok</title>
+    <script src="js/public/fontawesome.min.js" crossorigin="anonymous"></script>
+    <script src="js/public/jquery-3.6.4.min.js"></script>
+    <script src="js/public/jquery-cookie-1.4.1.min.js"></script>
+    <script type="module" src="js/index.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <img class="logo" href="login.html" src="asset/tiktok.png" alt="Tiktok"/>
+        <div class="search-bar">
+            <input
+                    type="text"
+                    class="search-input"
+                    placeholder="查找用户和视频"
+            />
+            <button class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div class="nav-right">
+            <button class="upload-btn">投稿</button>
+            <button class="login-btn">登录</button>
+            <div class="drop-down">
+                <i class="fas fa-ellipsis-v fa-lg"></i>
+                <div class="menu hidden">
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fas fa-font fa-lg"></i>中文</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="far fa-question-circle fa-lg"></i>反馈和帮助
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                            ><i class="far fa-keyboard fa-lg"></i>键盘快捷键</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="left">
+        <div class="btns">
+            <a href="#"><i class="fas fa-home"></i> <span>推荐</span></a>
+            <a href="#"><i class="fas fa-user-friends"></i> <span>已关注</span></a>
+            <a href="#"><i class="fas fa-video"></i> <span>直播</span></a>
+        </div>
+        <div class="login">
+            <p>登录以关注、点赞、评论</p>
+            <button href="login.html">登录</button>
+        </div>
+        <div class="accounts">
+            <p>您可能喜欢的</p>
+            <div class="user">
+                <img src="https://i.postimg.cc/Kzs14Wxn/ronaldo.png" alt="avatar">
+                <h6 class="username">RONALDO✅</h6>
+            </div>
+            <div class="user">
+                <img src="https://i.postimg.cc/RSGfjs5C/fcb.png" alt="avatar">
+                <h6 class="username">FCB✅</h6>
+            </div>
+            <div class="user">
+                <img src="https://i.postimg.cc/tTg1qbQq/garina.png" alt="avatar">
+                <h6 class="username">GARINA✅</h6>
+            </div>
+            <div class="user">
+                <img src="https://i.postimg.cc/25GbN6t9/messi.png" alt="avatar">
+                <h6 class="username">MESSI✅</h6>
+            </div>
+            <div class="user">
+                <img src="https://i.postimg.cc/52rzTLBn/kahabe.png" alt="avatar">
+                <h6 class="username">KHABY.LAME✅</h6>
+            </div>
+            <div class="more">查看全部</div>
+        </div>
+        <div class="tags">
+            <p>发现</p>
+            <div>
+                <a href="#"># rikeshdahal</a>
+                <a href="#"># mrmadhacker</a>
+                <a href="#"># music</a>
+                <a href="#"># memories</a>
+                <a href="#"># whoisbetter</a>
+                <a href="#"># tiktokhero</a>
+                <a href="#"># summeressentials</a>
+                <a href="#"># brokenmusic</a>
+                <a href="#"># dancing</a>
+                <a href="#"># messi</a>
+            </div>
+        </div>
+        <div class="links">
+            <div>
+                <div class="link">
+                    <a href="#">关于</a>
+                    <a href="#">新闻中心</a>
+                    <a href="#">联系信息</a>
+                    <a href="#">工作</a>
+                    <a href="#">南邮通达</a>
+                </div>
+                <div class="copyright">
+                    <h6>&copy; 2023 tik</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="right">
+<!--         new -->
+<!--        <div class="post">-->
+<!--            <div class="post-info">-->
+<!--                <div class="user">-->
+<!--                    <img src="https://i.postimg.cc/25GbN6t9/messi.png" alt="avatar">-->
+<!--                    <div>-->
+<!--                        <h6>MESSI✅</h6>-->
+<!--                        <p>I Remember The Day❤️</p>-->
+<!--                        <i class="fa-solid fa-music-note"></i>-->
+<!--                        <marquee>original sound - MESSI✅</marquee>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <button id="btnText1">关注</button>-->
+<!--            </div>-->
+<!--            <div class="post-content">-->
+<!--                <video class="videos" autoplay muted controls loop disablepictureinpicture controlslist="nodownload noplaybackrate">-->
+<!--                    <source src="https://tik-videos-server.oss-cn-hangzhou.aliyuncs.com/0407/06f2e363-06db-409e-a410-8b2d5f956955.mp4?Expires=1681005606&OSSAccessKeyId=TMP.3KemqKqbR65sPo8KPdVyTvsFtPUBH836cCvYBstT3av1gXJZoJcqQygybY42NcUu1zfdX2GHyfadmqjLhUgcavrydu3cDQ&Signature=bYX58ccMSg6Y%2BiBpJyW%2BsFvHu6c%3D"-->
+<!--                            type="video/mp4">-->
+<!--                </video>-->
+<!--                <div class="video-icons">-->
+<!--                    <a href="#"><i class="heart1">🤍</i><span id="love1">11.6M</span></a>-->
+<!--                    <a href="#"><i class="fas fa-comment-dots fa-lg"></i><span>4023</span></a>-->
+<!--                    <a href="#"><i class="fas fa-share fa-lg"></i> <span><strong data-e2e="share-count"-->
+<!--                                                                                 class="tiktok-1y2yo26-StrongText e1pqpokj2">1050</strong></span></a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+        <div id="videos">
+            <!-- Existing videos will be appended here -->
+        </div>
+        <div id="loading">
+            <p>Loading...</p>
+        </div>
+
+    </div>
+
+
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

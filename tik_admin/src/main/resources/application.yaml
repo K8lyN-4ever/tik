@@ -1,0 +1,16 @@
+server:
+  port: 8000
+  servlet:
+    # UTF-8
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+spring:
+  application:
+    name: tik-admin
+  datasource:
+    username: root
+    password:
+    url: jdbc:mysql://localhost:3306/users?allowPublicKeyRetrieval=true&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver

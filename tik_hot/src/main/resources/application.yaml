@@ -1,0 +1,23 @@
+server:
+  port: 8008
+  tomcat:
+    max-connections: 10240
+
+spring:
+  application:
+    name: tik-hot
+  config:
+    import:
+      - optional:configserver:${CONFIGSERVER_URL:http://localhost:8888}
+  cloud:
+    config:
+      uri: localhost:8888
+      name: tik-hot
+      profile: dev
+    zookeeper:
+      connect-string: localhost:2181
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306
+    driver-class-name: com.mysql.cj.jdbc.Driver

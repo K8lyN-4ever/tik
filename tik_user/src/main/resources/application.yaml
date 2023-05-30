@@ -1,0 +1,20 @@
+server:
+  port: 8002
+  tomcat:
+    connection-timeout: 10
+  netty:
+    connection-timeout: 10
+
+spring:
+  application:
+    name: tik-user # 当前服务的名称
+  config:
+    import:
+      - optional:configserver:${CONFIGSERVER_URI:http://localhost:8888}
+  cloud:
+    config:
+      uri: localhost:8888
+      name: tik-user
+      profile: dev
+    zookeeper:
+      connect-string: localhost:2181
